@@ -74,7 +74,7 @@ const ProductDetail = ( { match}) => {
             )
           }
           <ListGroupItem>
-            <Button className="btn-block" type="button" onClick={addToCartHandler}>
+            <Button className="btn-block" type="button" onClick={addToCartHandler}disabled={products.countInStock > 0 ? false : true} >
               Add to cart
             </Button>
           </ListGroupItem>

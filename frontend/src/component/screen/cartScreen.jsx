@@ -11,7 +11,7 @@ const CartScreen = () => {
   const qty = location ? Number(location.split('=')[1]) :1 ;
   const dispatch = useDispatch();
   useEffect(() => {
-    if (productId) {
+    if (productId.id) {
       dispatch(addToCart(productId, qty))
     }
   }, [dispatch, productId, qty])

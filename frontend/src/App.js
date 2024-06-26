@@ -6,6 +6,7 @@ import Header from "./component/Header";
 import Home from "./component/screen/home";
 import ProductDetail from "./component/screen/productDetail";
 import CartScreen from "./component/screen/cartScreen";
+import LoginScreen from "./component/screen/loginScreen";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Routes> 
       <Route path="/" Component={Home} exact />
+      <Route path="/login" element={<LoginScreen />}  exact />
       <Route path="/product/:id" element={<ProductDetail />} exact/>
       <Route path="/cart/:id?" element={<CartScreen />} exact/>
       </Routes>
