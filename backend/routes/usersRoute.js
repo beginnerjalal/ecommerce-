@@ -1,5 +1,5 @@
 const express = require('express');
-const {authController, getUserProfile, registerUser} =require("../controllers/usersRouteController")
+const {authController, getUserProfile, registerUser,updateUserProfile} =require("../controllers/usersRouteController")
 const {protect} = require('../middlewares/authMiddelware');
 // require("colors")
 
@@ -14,6 +14,6 @@ router.post("/login",authController);
 
 
 //get user private/protected route
-router.route("/profile").get(protect,getUserProfile);
+router.route("/profile").get(protect,getUserProfile).put(protect, updateUserProfile)
 
 module.exports = router;
