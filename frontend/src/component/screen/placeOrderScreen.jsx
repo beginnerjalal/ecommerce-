@@ -54,10 +54,10 @@ const PlaceOrderScreen = () => {
             <ListGroup.Item>
                 <h2>Shipping</h2>
                 <p><strong>Address :  </strong> 
-                {cart.shippingAddress.address},&nbsp;
-                {cart.shippingAddress.city},&nbsp;
-                {cart.shippingAddress.postalCode},&nbsp;
-                {cart.shippingAddress.country}
+                {cart.shippingAddress?.address},&nbsp;
+                {cart.shippingAddress?.city},&nbsp;
+                {cart.shippingAddress?.postalCode},&nbsp;
+                {cart.shippingAddress?.country}
                 </p>
             </ListGroup.Item>
 
@@ -89,10 +89,10 @@ const PlaceOrderScreen = () => {
                     )))}
                  </ListGroup> )}
                 <p><strong> Address :  </strong> 
-                {cart.shippingAddress.address},&nbsp;
-                {cart.shippingAddress.city},&nbsp;
-                {cart.shippingAddress.postalCode},&nbsp;
-                {cart.shippingAddress.country}
+                {cart.shippingAddress?.address},&nbsp;
+                {cart.shippingAddress?.city},&nbsp;
+                {cart.shippingAddress?.postalCode},&nbsp;
+                {cart.shippingAddress?.country}
                 </p>
             </ListGroup.Item>
         </ListGroup>

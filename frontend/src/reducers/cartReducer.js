@@ -1,4 +1,12 @@
-export const cartReducer = (state = { cartItems: [] }, action) => {
+const initialState = {
+  cartItems: [],
+  shippingAddress: localStorage.getItem('shippingAddress')
+    ? JSON.parse(localStorage.getItem('shippingAddress'))
+    : {},
+  paymentMethod: '',
+};
+
+export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "CART_ADD_ITEM":
       const item = action.payload;
