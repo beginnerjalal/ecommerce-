@@ -6,9 +6,9 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       if (existItem) {
         return {
           ...state,
-          cartItems: state.cartItems.map((i) => {
-            i.product === existItem.product ? item : i;
-          }),
+          cartItems: state.cartItems.map((i) =>
+            i.product === existItem.product ? item : i
+          ),
         };
       } else {
         return {
@@ -21,6 +21,14 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
           ...state,
           cartItems: state.cartItems.filter(x => x.product !== action.payload),
         }
+        case "CART_SAVE_SHIPPING_ADDRESS":
+          return{
+            ...state, shippingAddress: action.payload
+          };
+          case "CART_SAVE_PAYMENT_METHOD":
+            return{
+              ...state,paymentMethod:action.payload
+            }
     default:
       return state;
   }

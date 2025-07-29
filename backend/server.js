@@ -5,6 +5,7 @@ const connectDB = require("./config/config");
 const productRoutes = require('./routes/productRoutes');
 const {errorHandler} = require("./middlewares/errormiddlewares");
 const usersRoutes = require('./routes/usersRoute');
+const orderRoutes = require('./routes/orderRoute');
 
 // env configuration 
 dotenv.config();
@@ -18,6 +19,8 @@ res.send('<h1> welcome to node</h1>')
 
 app.use("/api", productRoutes);
 app.use("/api/users", usersRoutes);
+app.use("/api/orders", orderRoutes);
+
 app.use(errorHandler);
 const PORT = 8080
 app.listen(process.env.PORT ||  PORT,()=>{
