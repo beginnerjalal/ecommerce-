@@ -2,10 +2,11 @@ import {React, useEffect} from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import {Row,Col,Form,Button,Card,Image,ListGroup,ListGroupItem} from "react-bootstrap"
 import { addToCart , removeFromCart} from "../../actions/cartAction"
-import { useParams, Link, useLocation} from 'react-router-dom';
+import { useParams, Link, useLocation, useNavigate} from 'react-router-dom';
 
 
 const CartScreen = () => {
+  let history = useNavigate();
   let productId = useParams();
   let location = useLocation().search;
   const qty = location ? Number(location.split('=')[1]) :1 ;
@@ -24,7 +25,7 @@ const CartScreen = () => {
   };
 
   const checkout = () => {
-    // history.push("/login?redirect=shipping");
+    history("/shipping");
     console.log("checkout");
   };
   return (
